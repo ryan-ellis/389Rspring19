@@ -12,39 +12,20 @@
 #include <stdio.h>
 
 int main(){
-	int *rsp;
-	rsp -= 10;
-
 	int *var1, *var2;
-	var1 = 0x1ceb00da;
-	var2 = 0xfeedface;
+	*var1 = 0x1ceb00da;
+	*var2 = 0xfeedface;
 
-	int *eax, *esi;
-	char *edi;
+	printf("a = %d\n", *var1);
 
-	eax = 0xfeedface;
-	esi = eax;
-	edi = "'a = %d\n'"
-	eax = 0;
-	printf(edi, esi);
-
-	eax = 0x1ceb00da;
-	esi = eax;
-	edi = "'a = %d\n'"
-	eax = 0;
-	printf(edi, esi);
+	printf("b = %d\n", *var2);
 
 	//XOR STUFF
+	var1 = *var1 ^ *var2;
+	var2 = *var1 ^ *var1;
+	var1 = *var1 ^ *var2;
 
-	eax = 0xfeedface;
-	esi = eax;
-	edi = "'a = %d\n'"
-	eax = 0;
-	printf(edi, esi);
+	printf("a = %d\n", *var1);
 
-	eax = 0x1ceb00da;
-	esi = eax;
-	edi = "'a = %d\n'"
-	eax = 0;
-	printf(edi, esi);
+	printf("b = %d\n", *var2);
 }

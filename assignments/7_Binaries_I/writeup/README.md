@@ -14,9 +14,28 @@ Digital acknowledgement: Ryan Ellis
 
 *Put your code here as well as in main.c*
 ```c
-printf("your code here");
+#include <stdio.h>
+
+int main(){
+	int *var1, *var2;
+	*var1 = 0x1ceb00da;
+	*var2 = 0xfeedface;
+
+	printf("a = %d\n", *var1);
+
+	printf("b = %d\n", *var2);
+
+	//XOR STUFF
+	var1 = *var1 ^ *var2;
+	var2 = *var1 ^ *var1;
+	var1 = *var1 ^ *var2;
+
+	printf("a = %d\n", *var1);
+
+	printf("b = %d\n", *var2);
+}
 ```
 
 ### Part 2 (10 Pts)
 
-*Replace this text with your repsonse to our prompt for part 2!*
+This program first loads integer values from two specific memory addresses into two local variables. After each variable is printed the two numbers are xor'd together and then printed again to show the changes.
