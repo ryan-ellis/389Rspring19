@@ -9,6 +9,9 @@
  */
 
 /* your code goes here */
+
+
+// Different approach that I later simplified in main.c
 #include <stdio.h>
 
 int main(){
